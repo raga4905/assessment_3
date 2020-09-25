@@ -12,7 +12,7 @@
 
 <body>
     <h1>Wacky Widgets</h1>
-    <hr>
+
     {% if widgets|length == 0 %}
     <p>No widgets yet...</p>
     {% else %}
@@ -33,7 +33,7 @@
         {% endfor %}
     </table>
     {% endif %}
-    <hr>
+
     <a class="pure-button" href="{% url 'add_widget' %}">Add a Widget</a>
 
     <style>
