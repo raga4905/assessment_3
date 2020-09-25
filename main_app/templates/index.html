@@ -10,7 +10,17 @@
 </head>
 
 <body>
-    <h1>To Do List:</h1>
+    <h1>Wacky Widgets</h1>
+    <hr>
+    {% if widgets|length == 0 %}
+    <p>No widgets yet...</p>
+    {% else %}
+    <ul>
+        {% for widget in widgets %}
+        <li>{{ widget }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <hr>
 </body>
 
