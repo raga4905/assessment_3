@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Assessment 3</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 </head>
 
 <body>
@@ -15,11 +16,20 @@
     {% if widgets|length == 0 %}
     <p>No widgets yet...</p>
     {% else %}
-    <ul>
+    <table class="pure-table" class="pure-table-striped">
+        <thead>
+            <tr>Descirption</tr>
+            <tr>Quantity</tr>
+            <tr>Delete</tr>
+        </thead>
         {% for widget in widgets %}
-        <li>{{ widget }} <a href="{% url 'delete_widget' widget.id %}"><input type="submit" value="X"></a> </li>
+        <tbody>
+            <td>{{widget.description}}</td>
+            <td>{{widget.quantity}}</td>
+            <td><a href="{% url 'delete_widget' widget.id %}"><input type="submit" value="X"></a></td>
+        </tbody>
         {% endfor %}
-    </ul>
+    </table>
     {% endif %}
     <hr>
     <a href="{% url 'add_widget' %}">Add a Widget</a>
