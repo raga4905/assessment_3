@@ -7,7 +7,7 @@ class Widget(models.Model):
     quantity = models.IntegerField()
 
     def __str__(self):
-        return self.item
+        return self.description
 
     def get_absolute_url(self):
         return reverse('index')
