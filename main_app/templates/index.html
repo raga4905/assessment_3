@@ -17,7 +17,7 @@
     {% else %}
     <ul>
         {% for widget in widgets %}
-        <li>{{ widget }}</li>
+        <li>{{ widget }} <a href="{% url 'delete_widget' widget.id %}"><input type="submit" value="X"></a> </li>
         {% endfor %}
     </ul>
     {% endif %}
