@@ -16,14 +16,16 @@
     {% if widgets|length == 0 %}
     <p>No widgets yet...</p>
     {% else %}
-    <table class="pure-table" class="pure-table-striped">
-        <thead>
-            <tr>Descirption</tr>
-            <tr>Quantity</tr>
+    <table class="pure-table">
+
+        <thead class="table">
+            <tr>Descirption</tr>&nbsp;&nbsp;
+            <tr>Quantity</tr>&nbsp;&nbsp;
             <tr>Delete</tr>
         </thead>
         {% for widget in widgets %}
-        <tbody>
+
+        <tbody class="table">
             <td>{{widget.description}}</td>
             <td>{{widget.quantity}}</td>
             <td><a href="{% url 'delete_widget' widget.id %}"><input type="submit" value="X"></a></td>
@@ -32,7 +34,24 @@
     </table>
     {% endif %}
     <hr>
-    <a href="{% url 'add_widget' %}">Add a Widget</a>
+    <a class="pure-button" href="{% url 'add_widget' %}">Add a Widget</a>
+
+    <style>
+        table {
+            margin: 2rem auto;
+            padding: 400px;
+        }
+
+        table a {
+            color: red;
+        }
+
+        body {
+            text-align: center;
+            margin: 2rem;
+        }
+    </style>
+
 </body>
 
 </html>

@@ -4,19 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Delete Widget</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 </head>
 
 <body>
     <h1>Delete Widget</h1>
 
-    <h4>Are you sure you want to delete <span class="teal-text">{{ object.description }}</span>?</h4>
+    <h4>Are you sure you want to delete {{ object.description }}?</h4>
 
     <form action="" method="POST">
         {% csrf_token %}
-        <input type="submit" value="Yes - Delete!" class="btn">
+        <input type="submit" value="Yes - Delete!" class="pure-button">
         <a href="{% url 'index' %}">Cancel</a>
     </form>
+    <style>
+        body {
+            text-align: center;
+            margin: 2rem;
+        }
+        form {
+            text-align: center;
+            margin: 2rem;
+        }
+    </style>
 </body>
 
 </html>

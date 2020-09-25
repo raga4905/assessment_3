@@ -5,19 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Wacky Widgets</title>
+    <title>Add Widget</title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
         integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 </head>
 
 <body>
-    <form class="pure-form" action="" method="post">
+    <h1>Add Widget</h1>
+    <form class="pure-form pure-form-stacked pure-form-aligned" action="" method="post">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
         <input class="pure-button" type="submit" value="Submit!">
     </form>
+
+    <style>
+
+        table {
+            margin: 2rem auto;
+            padding: 400px;
+        }
+
+        body {
+            text-align: center;
+            margin: 2rem;
+        }
+    </style>
+
 </body>
 
 </html>
